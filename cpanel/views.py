@@ -19,11 +19,11 @@ firebase = pyrebase.initialize_app(config)
 authe = firebase.auth()
 
 
-def signin(request):
+def home(request):
     return render(request, "home.html")
 
 
-def postsignin(request):
+def signin(request):
     email = request.POST.get('email')
     passw = request.POST.get('pass')
 
@@ -31,7 +31,7 @@ def postsignin(request):
         user = authe.sign_in_with_email_and_password(email,passw)
     except:
         message = "invalid credentials"
-        return render(request, "home.html", {"messg": message})
+        return render(request, "temp.html", {"messg": message})
 
     print(user['idToken'])
     session_id = user['idToken']

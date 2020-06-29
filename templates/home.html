@@ -1,8 +1,4 @@
-{% if messg %}
-<script>
-    alert ('{{ messg }}');
-</script>
-{% endif %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +6,7 @@
     <title>Sign</title>
 </head>
 <body>
-<form method="post">
+<form action="/signin/" method="post">
     {% csrf_token %}
     Email :
     <input type="email" name="email"><br><br>
