@@ -7,7 +7,9 @@
 </head>
 <body>
 Welcome {{e}}
-
+<br><br>
+<button type="button" onclick="location.href='{% url 'create' %}'"> Create Report</button>
+<button type="button"> Check Report</button>
 <button type="button" onclick="location.href='{% url 'logout' %}'">Logout</button>
 </body>
 </html>
