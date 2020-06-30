@@ -8,8 +8,12 @@
 <body>
 Welcome {{e}}
 <br><br>
-<button type="button" onclick="location.href='{% url 'create' %}'"> Create Report</button>
-<button type="button" onclick="location.href='{% url 'check' %}' "> Check Report</button>
+{% for time,dat,work in comb %}
+
+Date: {{dat}} &nbsp;Work: <a href="/postcheck/?z={{time}}" >{{work}}</a>
+<br>
+
+{% endfor %}
 <button type="button" onclick="location.href='{% url 'logout' %}'">Logout</button>
 </body>
 </html>
